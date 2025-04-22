@@ -46,7 +46,7 @@ const categorizedSkills = [
 
 const Skills = () => {
   return (
-    <div className="bg-white py-16 px-6 md:px-20 lg:px-32" id="skills">
+    <div className="bg-gradient-to-br from-gray-100 to-white min-h-screen p-8" id="skills">
       <h2 className="text-4xl font-bold text-center text-gray-800 mb-10 animate-fade-in">
         Skills & Technologies
       </h2>

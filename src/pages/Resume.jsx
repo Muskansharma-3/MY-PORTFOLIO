@@ -13,7 +13,7 @@ const resumes = [
 
 function Resumes() {
   return (
-    <div className="pt-24 px-4 max-w-5xl mx-auto">
+    <div className="bg-gradient-to-br from-gray-100 to-white min-h-screen p-8">
       <h1 className="text-3xl font-bold text-center mb-10">My Resumes</h1>
 
       <div className="flex flex-col gap-12">

@@ -35,7 +35,7 @@ const Certificates = () => {
   const [modalImage, setModalImage] = useState(null);
 
   return (
-    <div className="bg-gradient-to-tr from-white to-gray-50 min-h-screen p-8">
+    <div className="bg-gradient-to-br from-gray-100 to-white min-h-screen p-8">
       <h2 className="text-4xl font-bold text-center text-gray-800 mb-12">My Certificates</h2>
 
       <div className="space-y-12">

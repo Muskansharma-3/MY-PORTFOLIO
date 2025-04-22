@@ -56,7 +56,7 @@ const ContactForm = () => {
   };
 
   return (
-    <section id="contact" className="max-w-2xl mx-auto p-8 bg-gray-50 rounded-lg">
+    <section id="contact" className="bg-gradient-to-br from-gray-100 to-white min-h-screen p-8">
       <h2 className="text-2xl font-semibold text-center mb-6">Contact Me</h2>
       {submitted ? (
         <p className="text-center text-green-600">Thank you for reaching out! I'll get back to you soon.</p>

@@ -36,8 +36,8 @@ const Projects = () => {
   const [modalImage, setModalImage] = useState(null);
 
   return (
-    <div className="bg-gradient-to-br from-gray-100 to-white min-h-screen p-8">
-      <h2 className="text-4xl font-bold text-center text-gray-800 mb-12">My Projects</h2>
+    <div className="bg-gradient-to-br from-gray-100 to-white min-h-screen p-8 px-16">
+      <h2 className="text-4xl font-bold text-center text-[#00bcd4] mb-12">My Projects</h2>
 
       <div className="space-y-16">
         {projects.map((project, index) => (
@@ -51,18 +51,18 @@ const Projects = () => {
           >
             {/* Description */}
             <div className="lg:w-1/2 p-8 space-y-3">
-              <h3 className="text-3xl font-bold text-gray-800">{project.title}</h3>
-              <p className="text-gray-600"><strong>Objective:</strong> {project.objective}</p>
-              <p className="text-gray-600"><strong>Tech Stack:</strong> {project.techStack}</p>
-              <p className="text-gray-600"><strong>Features:</strong> {project.features}</p>
-              <p className="text-gray-600"><strong>Outcome:</strong> {project.outcome}</p>
+              <h3 className="text-3xl font-bold text-[#00bcd4]">{project.title}</h3>
+              <p className="text-gray-700"><span className="font-semibold text-[#00bcd4]">Objective:</span> {project.objective}</p>
+              <p className="text-gray-700"><span className="font-semibold text-[#00bcd4]">Tech Stack:</span> {project.techStack}</p>
+              <p className="text-gray-700"><span className="font-semibold text-[#00bcd4]">Features:</span> {project.features}</p>
+              <p className="text-gray-700"><span className="font-semibold text-[#00bcd4]">Outcome:</span> {project.outcome}</p>
 
               <div className="mt-5 flex flex-wrap gap-4">
                 <a
                   href={project.live}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-green-500 text-white px-4 py-2 rounded-lg hover:scale-105 transition"
+                  className="inline-flex items-center gap-2 bg-[#00bcd4] text-white px-4 py-2 rounded-lg hover:bg-[#0097a7] transition"
                 >
                   <FaExternalLinkAlt /> Live Demo
                 </a>
@@ -70,7 +70,7 @@ const Projects = () => {
                   href={project.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-gray-800 text-white px-4 py-2 rounded-lg hover:scale-105 transition"
+                  className="inline-flex items-center gap-2 bg-gray-800 text-white px-4 py-2 rounded-lg hover:bg-gray-700 transition"
                 >
                   <FaGithub /> GitHub
                 </a>
@@ -95,10 +95,23 @@ const Projects = () => {
 
       {/* Modal */}
       {modalImage && (
-        <div className="fixed inset-0 z-50 bg-black bg-opacity-70 flex items-center justify-center p-4" onClick={() => setModalImage(null)}>
-          <div className="relative max-w-3xl w-full" onClick={(e) => e.stopPropagation()}>
-            <img src={modalImage} alt="Enlarged Project Screenshot" className="rounded-xl w-full object-contain max-h-[90vh]" />
-            <button onClick={() => setModalImage(null)} className="absolute top-2 right-2 text-white text-2xl hover:text-red-400 transition">
+        <div
+          className="fixed inset-0 z-50 bg-black bg-opacity-70 flex items-center justify-center p-4"
+          onClick={() => setModalImage(null)}
+        >
+          <div
+            className="relative max-w-3xl w-full"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <img
+              src={modalImage}
+              alt="Enlarged Project Screenshot"
+              className="rounded-xl w-full object-contain max-h-[90vh]"
+            />
+            <button
+              onClick={() => setModalImage(null)}
+              className="absolute top-2 right-2 text-white text-2xl hover:text-red-400 transition"
+            >
               <FaTimes />
             </button>
           </div>

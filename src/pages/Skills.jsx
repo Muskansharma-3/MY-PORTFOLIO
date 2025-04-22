@@ -46,22 +46,22 @@ const categorizedSkills = [
 
 const Skills = () => {
   return (
-    <div className="bg-gradient-to-br from-gray-100 to-white min-h-screen p-8" id="skills">
-      <h2 className="text-4xl font-bold text-center text-gray-800 mb-10 animate-fade-in">
+    <div className="bg-gradient-to-br from-gray-100 to-white min-h-screen px-4 sm:px-8 py-12" id="skills">
+      <h2 className="text-4xl font-bold text-center text-[#00bcd4] mb-16">
         Skills & Technologies
       </h2>
 
-      <div className="space-y-12 max-w-6xl mx-auto">
+      <div className="space-y-16 max-w-6xl mx-auto">
         {categorizedSkills.map((category, index) => (
           <div key={index}>
-            <h3 className="text-2xl font-semibold text-gray-700 mb-6">
+            <h3 className="text-2xl font-semibold text-[#00bcd4] mb-6 text-center sm:text-left">
               {category.title}
             </h3>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
               {category.skills.map((skill, idx) => (
                 <div
                   key={idx}
-                  className="flex flex-col items-center bg-gray-50 p-4 rounded-xl shadow hover:shadow-xl hover:bg-indigo-50 transition duration-300 transform hover:-translate-y-1"
+                  className="flex flex-col items-center bg-white p-5 rounded-2xl shadow-md hover:shadow-xl transition-transform duration-300 hover:-translate-y-1"
                 >
                   <div className="text-3xl mb-2">{skill.icon}</div>
                   <p className="font-medium text-gray-800 text-center">{skill.name}</p>

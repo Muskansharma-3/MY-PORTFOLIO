@@ -15,20 +15,16 @@ const ContactForm = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value
-    });
+    setFormData({ ...formData, [name]: value });
   };
 
   const validateForm = () => {
     const errors = {};
-    if (!formData.firstName) errors.firstName = 'First name is required';
-    if (!formData.lastName) errors.lastName = 'Last name is required';
-    if (!formData.email) errors.email = 'Email is required';
-    if (!formData.subject) errors.subject = 'Subject is required';
-    if (!formData.message) errors.message = 'Message is required';
-
+    if (!formData.firstName.trim()) errors.firstName = 'First name is required';
+    if (!formData.lastName.trim()) errors.lastName = 'Last name is required';
+    if (!formData.email.trim()) errors.email = 'Email is required';
+    if (!formData.subject.trim()) errors.subject = 'Subject is required';
+    if (!formData.message.trim()) errors.message = 'Message is required';
     return errors;
   };
 
@@ -39,95 +35,101 @@ const ContactForm = () => {
 
     if (Object.keys(errors).length === 0) {
       emailjs.sendForm(
-        import.meta.env.VITE_APP_EMAILJS_SERVICE_ID, // Use environment variable for Service ID
-        import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID, // Use environment variable for Template ID
+        import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
         e.target,
-        import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY // Use environment variable for Public Key
-      )
-      .then((result) => {
+        import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
+      ).then((result) => {
         console.log('SUCCESS!', result.text);
         setSubmitted(true);
-        setFormData({ firstName: '', lastName: '', email: '', subject: '', message: '' }); // Clear the form
+        setFormData({ firstName: '', lastName: '', email: '', subject: '', message: '' });
       }, (error) => {
         console.log('FAILED...', error.text);
-        // Optionally display an error message to the user
       });
     }
   };
 
   return (
-    <section id="contact" className="bg-gradient-to-br from-gray-100 to-white min-h-screen p-8">
-      <h2 className="text-2xl font-semibold text-center mb-6">Contact Me</h2>
+    <section id="contact" className="bg-gradient-to-br from-gray-100 to-white min-h-screen py-12 px-6 sm:px-12">
+      <h2 className="text-3xl font-bold text-center text-[#00BCD4] mb-10">📬 Contact Me</h2>
+
       {submitted ? (
-        <p className="text-center text-green-600">Thank you for reaching out! I'll get back to you soon.</p>
+        <div className="text-center text-[#00BCD4] font-medium text-lg">
+          Thank you for reaching out! I'll get back to you soon. 😊
+        </div>
       ) : (
-        <form onSubmit={handleSubmit}>
-          <div className="mb-4">
-            <label htmlFor="first-name" className="block text-sm font-medium text-gray-700">First Name:</label>
-            <input
-              type="text"
-              id="first-name"
-              name="firstName"
-              value={formData.firstName}
-              onChange={handleChange}
-              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
-            />
-            {formErrors.firstName && <p className="text-red-600 text-sm mt-1">{formErrors.firstName}</p>}
+        <form onSubmit={handleSubmit} className="max-w-2xl mx-auto bg-white shadow-lg rounded-xl p-8 space-y-6">
+          <div className="grid md:grid-cols-2 gap-6">
+            <div>
+              <label htmlFor="first-name" className="block text-sm font-semibold text-gray-700 mb-1">First Name</label>
+              <input
+                type="text"
+                id="first-name"
+                name="firstName"
+                value={formData.firstName}
+                onChange={handleChange}
+                className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-[#00BCD4] focus:border-[#00BCD4]"
+              />
+              {formErrors.firstName && <p className="text-red-600 text-sm mt-1">{formErrors.firstName}</p>}
+            </div>
+            <div>
+              <label htmlFor="last-name" className="block text-sm font-semibold text-gray-700 mb-1">Last Name</label>
+              <input
+                type="text"
+                id="last-name"
+                name="lastName"
+                value={formData.lastName}
+                onChange={handleChange}
+                className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-[#00BCD4] focus:border-[#00BCD4]"
+              />
+              {formErrors.lastName && <p className="text-red-600 text-sm mt-1">{formErrors.lastName}</p>}
+            </div>
           </div>
 
-          <div className="mb-4">
-            <label htmlFor="last-name" className="block text-sm font-medium text-gray-700">Last Name:</label>
-            <input
-              type="text"
-              id="last-name"
-              name="lastName"
-              value={formData.lastName}
-              onChange={handleChange}
-              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
-            />
-            {formErrors.lastName && <p className="text-red-600 text-sm mt-1">{formErrors.lastName}</p>}
-          </div>
-
-          <div className="mb-4">
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email:</label>
+          <div>
+            <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-1">Email</label>
             <input
               type="email"
               id="email"
               name="email"
               value={formData.email}
               onChange={handleChange}
-              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+              className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-[#00BCD4] focus:border-[#00BCD4]"
             />
             {formErrors.email && <p className="text-red-600 text-sm mt-1">{formErrors.email}</p>}
           </div>
 
-          <div className="mb-4">
-            <label htmlFor="subject" className="block text-sm font-medium text-gray-700">Subject:</label>
+          <div>
+            <label htmlFor="subject" className="block text-sm font-semibold text-gray-700 mb-1">Subject</label>
             <input
               type="text"
               id="subject"
               name="subject"
               value={formData.subject}
               onChange={handleChange}
-              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+              className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-[#00BCD4] focus:border-[#00BCD4]"
             />
             {formErrors.subject && <p className="text-red-600 text-sm mt-1">{formErrors.subject}</p>}
           </div>
 
-          <div className="mb-4">
-            <label htmlFor="message" className="block text-sm font-medium text-gray-700">Message:</label>
+          <div>
+            <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-1">Message</label>
             <textarea
               id="message"
               name="message"
+              rows="5"
               value={formData.message}
               onChange={handleChange}
-              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+              className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-[#00BCD4] focus:border-[#00BCD4] resize-none"
             />
             {formErrors.message && <p className="text-red-600 text-sm mt-1">{formErrors.message}</p>}
           </div>
 
-          <button type="submit" className="w-full py-2 px-4 bg-indigo-600 text-white font-semibold rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500">
-            Send
+          <button
+            type="submit"
+            className="w-full py-3 bg-[#00BCD4] text-white text-lg font-semibold rounded-md hover:bg-[#00acc1] transition duration-200 focus:outline-none focus:ring-2 focus:ring-[#00BCD4]"
+          >
+            ✉️ Send Message
           </button>
         </form>
       )}

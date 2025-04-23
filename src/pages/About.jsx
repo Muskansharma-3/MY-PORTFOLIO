@@ -68,7 +68,7 @@ const About = () => {
           </h2>
 
           <p className="text-gray-700 text-lg leading-relaxed mb-4">
-            Hi, I’m <span className="text-[#00bcd4] font-semibold">Muskan Sharma</span>, a passionate Computer Science student who finds joy in merging <span className="font-medium text-[#333]">logic</span> with <span className="font-medium text-[#333]">design</span>.
+            Hello, I’m <span className="text-[#00bcd4] font-semibold">Muskan Sharma</span>, a passionate Computer Science student who finds joy in merging <span className="font-medium text-[#333]">logic</span> with <span className="font-medium text-[#333]">design</span>.
           </p>
 
           <p className="text-gray-700 text-lg leading-relaxed mb-6">

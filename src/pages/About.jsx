@@ -63,26 +63,19 @@ const About = () => {
 
         {/* About Me Text */}
         <div className="md:w-2/3 w-full bg-white rounded-2xl shadow-xl px-8 py-10 border border-gray-200 transform transition-transform duration-300 hover:scale-105">
-          <h2 className="text-4xl font-extrabold text-[#00bcd4] mb-6">
-            About Me
-          </h2>
+  <h2 className="text-4xl font-extrabold text-[#00bcd4] mb-6">
+    About Me
+  </h2>
 
-          <p className="text-gray-700 text-lg leading-relaxed mb-4">
-            Hello, I’m <span className="text-[#00bcd4] font-semibold">Muskan Sharma</span>, a passionate Computer Science student who finds joy in merging <span className="font-medium text-[#333]">logic</span> with <span className="font-medium text-[#333]">design</span>.
-          </p>
+  <p className="text-gray-700 text-lg leading-relaxed mb-4">
+    Hello, I’m <span className="text-[#00bcd4] font-semibold">Muskan Sharma</span>, a passionate Computer Science student who finds joy in merging <span className="font-medium text-[#333]">logic</span> with <span className="font-medium text-[#333]">design</span>.
+  </p>
 
-          <p className="text-gray-700 text-lg leading-relaxed mb-6">
-            I love building things with impact—be it through <span className="font-medium text-[#333]">clean code</span>, <span className="font-medium text-[#333]">modern UIs</span>, or solving real-world problems with scalable solutions.
-          </p>
+  <p className="text-gray-700 text-lg leading-relaxed mb-6">
+    I love building things with impact—be it through <span className="font-medium text-[#333]">clean code</span>, <span className="font-medium text-[#333]">modern UIs</span>, or solving real-world problems with scalable solutions. My technical strengths include <span className="text-[#00bcd4] font-medium">Java</span> and object-oriented programming, as well as <span className="text-[#00bcd4] font-medium">Data Structures & Algorithms</span> with a strong focus on logical problem-solving. I also specialize in <span className="text-[#00bcd4] font-medium">Web Development</span>, crafting clean and intuitive UI/UX designs. With a quick learning attitude and strong <span className="text-[#00bcd4] font-medium">adaptability</span>, I strive to build <span className="text-[#00bcd4] font-medium">user-friendly, scalable applications</span> that make a difference.
+  </p>
+</div>
 
-          <ul className="list-disc pl-6 space-y-3 text-gray-700 text-lg leading-relaxed">
-            <li><span className="text-[#00bcd4] font-medium">Java</span> and Object-Oriented Programming</li>
-            <li><span className="text-[#00bcd4] font-medium">Data Structures & Algorithms</span> with logical problem-solving</li>
-            <li><span className="text-[#00bcd4] font-medium">Web Development</span> with clean and modern UI/UX</li>
-            <li>Building <span className="text-[#00bcd4] font-medium">user-friendly, scalable applications</span></li>
-            <li>Strong <span className="text-[#00bcd4] font-medium">adaptability</span> and a quick learning attitude</li>
-          </ul>
-        </div>
       </div>
     </div>
   );

@@ -21,7 +21,7 @@ const projects = [
     features: "Appointment booking, admin dashboard, product cart & checkout, real-time validations.",
     outcome: "Enhanced customer service and streamlined salon operations.",
     github: "https://github.com/Muskansharma-3/Salon-Website",
-    live: "https://yourliveprojectlink.com/salon",
+    live: "https://bssalon.onrender.com/",
     image1: "/salon1.png",
     image2: "/salon2.png",
   },
